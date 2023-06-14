@@ -63,13 +63,12 @@ export default function TaskManager() {
   };
   const change_status=async (taskid,event)=>{
     event.preventDefault()
-    
-    setUpdateVisible((prevVisible) => !prevVisible);
     // event.preventDefault();
     const val=event.target.value ;
 
     try {
       await axios.put('https://mern-taskmanagementapp.onrender.com/tasks/update', { taskid,val});
+      setUpdateVisible((prevVisible) => !prevVisible);
       setstatus(prevstatus => !prevstatus)
     } catch (err) {
       console.log(err);
