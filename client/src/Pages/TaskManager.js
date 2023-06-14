@@ -19,7 +19,7 @@ export default function TaskManager() {
     const fetchData = async () => {
       try {
         setloading(true)
-        const response = await axios.get("http://localhost:8083/tasks/alltasks");
+        const response = await axios.get("https://mern-taskmanagementapp.onrender.com/tasks/alltasks");
         if (page===0){
           settasks(response.data.alltasks.reverse())
         }
@@ -44,7 +44,7 @@ export default function TaskManager() {
   }
   const removeItem = async (key) => {
     try {
-      await axios.put('http://localhost:8083/tasks/delete', { key });
+      await axios.put('https://mern-taskmanagementapp.onrender.com/tasks/delete', { key });
       const updatedTasks = taskstofetch.filter(task => task._id !== key);
       settasks(updatedTasks);
     } catch (err) {
@@ -69,7 +69,7 @@ export default function TaskManager() {
     const val=event.target.value ;
 
     try {
-      await axios.put('http://localhost:8083/tasks/update', { taskid,val});
+      await axios.put('https://mern-taskmanagementapp.onrender.com/tasks/update', { taskid,val});
 
     } catch (err) {
       console.log(err);
