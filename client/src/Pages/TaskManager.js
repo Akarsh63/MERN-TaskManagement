@@ -96,9 +96,10 @@ export default function TaskManager() {
           </div>
           {windowWidth>=735?( 
            <div className='filters'>
-               <button onClick={(event)=>{setpage(0),console.log(page)}} style={{color:page===0?'#3b71ca':'#777',borderBottom:page===0?'2px solid #3b71ca':'none'}}>ALL</button>
-               <button onClick={(event)=>{setpage(1),console.log(page)}} style={{color:page===1?'#3b71ca':'#777',borderBottom:page===1?'2px solid #3b71ca':'none'}}>COMPLETED</button>
-               <button onClick={(event)=>{setpage(2),console.log(page)}} style={{color:page===2?'#3b71ca':'#777',borderBottom:page===2?'2px solid #3b71ca':'none'}}>ACTIVE</button>
+               <button onClick={() => { setpage(0); console.log(page); }} style={{ color: page === 0 ? '#3b71ca' : '#777', borderBottom: page === 0 ? '2px solid #3b71ca' : 'none' }}>ALL</button>
+<button onClick={() => { setpage(1); console.log(page); }} style={{ color: page === 1 ? '#3b71ca' : '#777', borderBottom: page === 1 ? '2px solid #3b71ca' : 'none' }}>COMPLETED</button>
+<button onClick={() => { setpage(2); console.log(page); }} style={{ color: page === 2 ? '#3b71ca' : '#777', borderBottom: page === 2 ? '2px solid #3b71ca' : 'none' }}>ACTIVE</button>
+
            </div>):(
            <div className='filters'>
               <select name="filters" value={filters} onChange={Change_handler}>
@@ -125,7 +126,7 @@ export default function TaskManager() {
                     <p className='title'>{task.title}</p>
                     <p className='description'>{task.description}</p>
                     <p className='dateandtime'>{task.timeanddate}</p>
-                    <p className='status' style={{color:task.status=="On progress"? '#FFA500':'#228B22',display:'flex',flexDirection:'row'}}><div class="circle" style={{backgroundColor:task.status=="On progress"? '#FFA500':'#228B22'}}></div>{task.status}</p>
+                    <p className='status' style={{color:task.status==="On progress"? '#FFA500':'#228B22',display:'flex',flexDirection:'row'}}><div class="circle" style={{backgroundColor:task.status==="On progress"? '#FFA500':'#228B22'}}></div>{task.status}</p>
                     <div className='update' style={{display:selectedTaskId===task._id && updateVisible?"flex":"none"}}>
                       <div><input type="radio" name={`status_${task._id}`} value="On progress" style={{marginLeft:"0px"}} checked={task.status==="On progress"} onChange={(e) => change_status(task._id,e)}/> On progress</div>
                       <div><input type="radio" name={`status_${task._id}`} value="Completed"  style={{marginLeft:"0px"}} checked={task.status==="Completed"} onChange={(e) => change_status(task._id,e)}/> Completed</div>
