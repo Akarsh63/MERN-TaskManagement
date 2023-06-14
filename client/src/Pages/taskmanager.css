@@ -1,0 +1,158 @@
+.taskmanager{
+    background-color: #f8f8f8;
+    min-height: 100vh;
+    height: 100%;
+}
+
+.filters{
+   width: 85%;
+   margin-left: auto;
+   margin-right: auto;
+   padding-top: 20px;
+   display: flex;
+   flex-direction: row;
+   margin-bottom: 25px;
+}
+.filters button{
+    outline: none;
+    border: none;
+    padding: 10px 30px;
+    background-color: transparent;
+    cursor: pointer;
+    transition: .2s background-color;
+    font-size: 16.5px;
+}
+.filters select{
+    width: 100%;
+    height:40px;
+    border-radius: 5px;
+text-align: center;
+font-size: 15px;}
+.filters button:hover{
+    background-color: #f7f7f7;
+}
+.loading{
+    font-size: 17px;
+    display:flex;
+    align-items: center;
+    gap:10px
+}
+.loader {
+    margin:50px 0;
+    /* border: 13px dotted #EAF0F6; */
+    border-radius: 50%;
+    border-top: 3px dotted #1e1e1e;
+    border-left: 3px dotted #1e1e1e;
+    width: 20px;
+    height: 20px;
+    animation: spinner 1.9s linear infinite;
+  }
+  
+  @keyframes spinner {
+    0% { transform: rotate(0deg); }
+    100% { transform: rotate(360deg); }
+  }
+
+  .taskdiv {
+    padding: 10px 20px;
+    background-color: #f4f6f7;
+    width: 85%;
+    margin: 0 auto 15px;
+    border-radius: 5px;
+    box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+    display: flex;
+    flex-direction: row;
+    gap:50px
+  }
+  
+  .taskdiv .title {
+    font-size: 18px;
+    font-weight: bold;
+    margin-bottom: 5px;
+  }
+  
+  .taskdiv .description {
+    font-size: 14px;
+    color: #555;
+    margin-bottom: 5px;
+  }
+  
+  .taskdiv .dateandtime {
+    font-size: 12px;
+    color: #777;
+  }
+  .searchbar{
+    width: 85%;
+    margin: 0px auto 15px;
+    border-radius: 5px;
+    height:38px;
+    display: flex;
+    flex-direction: row;
+    gap:50px;
+    padding-top: 50px;
+  }
+  .searchbar input{
+    /* box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1); */
+    width: 100%;
+    border: 1px solid #ccc;
+    border-radius: 5px;
+    padding: 10px;
+    outline: none;
+    background-color: transparent;
+    transition: .01s border;
+  } 
+  .searchbar button{
+    cursor: pointer;
+    border: none;
+    outline: none;
+    background-color: #54b4d3;
+    color: #fff;
+    font-size: 16px;
+    border-radius: 3px;
+    padding:10px;
+  }
+  .circle {
+    width: 11px;
+    height: 11px;
+    border-radius: 50%;
+    margin-right: 4px;
+    
+  }
+  .status{
+    display: flex;
+    align-items: center;
+    justify-content: start;
+  }
+  .icons{
+    width:10%;
+    display: flex;
+    flex-direction: column;
+    justify-content: space-around;
+  }
+  .update{
+    display: flex;
+    flex-direction: row;
+    margin-bottom:12px ;
+    gap:12px
+  }
+  .notasks{
+    text-align: center;
+    font-size: 24px;
+    margin:20px 0;
+    color: #ccc;
+    font-weight: 500;
+  }
+@media only screen and (max-width:586px){
+    .taskdiv{
+        width: 78%;
+    }
+    .searchbar{
+        gap:30px;
+      }
+}
+@media only screen and (max-width:630px){
+    .update{
+        flex-direction: column;
+        gap:8px
+    }
+}
