@@ -58,8 +58,9 @@ export default function TaskManager() {
     setpage(selectedPage);
   };
   const updateItem = (taskid) => {
-    setSelectedTaskId(taskid);
     setUpdateVisible((prevVisible) => !prevVisible);
+    setSelectedTaskId(taskid);
+    
   };
   const change_status=async (taskid,event)=>{
     event.preventDefault()
